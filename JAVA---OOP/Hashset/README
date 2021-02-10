@@ -1,0 +1,92 @@
+eli.yacobov1
+
+README for ex4
+
+=============================
+=      File description     =
+=============================
+
+
+SimpleHashSet.java-main abstract class the is used as a super class for both the OpenHashSet
+and closedHashSet classes 
+
+OpenHashSet.java-implements the class which represents the 'OpenHashSet' type object
+
+ClosedHashSet.java-implements the class which represents the 'OpenHashSet' type object
+
+Custom_List.java-implements the class which represents the 'List' type object. This object has a
+LinkedList as one of its variables,and it it used in the implementation of the OpenHashSet class. 
+
+CollectionFacadeSet.java-implements the class which represents the 'CollectionFacadeSet' type object
+
+SimpleSetPerformanceAnalyzer.java-class that test the methods  functionalities of the LongTermStorage class
+
+=============================
+=          Design           =
+=============================
+
+-In order to maintain a clean and orginized coding style,I implemnted part of the methods
+by dividing them into smaller private sub-methods:
+
+*ClosedHashSet- I implemented 2 private methods in order to orginize the code in a more clean manner.
+first one is the resize method wich upon adding or deliting an element from the set,checks if there
+is a deviation from the pre determent load factors.If there is,it resizes the array and rehashes all
+of the items in the set.
+
+another method is Iterator,which checks if an item does not exist in the array by iterating though
+the suitable cells (according to th given hash function).Iterator also returns an index for an item can be added 
+to the set in the same manner.
+
+*OpenHashSet-first of all,in order to reate an array with linkedlist functionality for each cell,I created
+a new type of object called Custom_List,which has a LinkedList<String> object as one of its variables.
+Custom_List supports all of the methods that exist in simpleset.I also used the iterator method for this class
+and it works in the same fashion as in the ClosedHashSet class.
+
+=============================
+=  Implementation details   =
+=============================
+
+
+-Notice that the constructors of the open and closed sets use the constructor of the super class
+SimpleHashSet,to make things more simple.
+
+-In each type of set,upon initialization,empty values of List object and string object are being put
+into to the arrays of the classes in order to prevent nullPointerException errors.
+
+-SimpleSetPerformanceAnalyzer-I built a method for each of the six measurment test.For the sake of modularity,
+each test recives a number that represents the type of data structure,and the test is performed on this type.
+In the main method all of the test are performed on all of the data structures,but like I said,if one whishs,he
+can take each individual test at a time.
+
+Test Results:
+Bad results for adding data1:
+OpenHashSet-since the mixture of the strings is very unnatural,there were alot of values
+that were added into each LinkedList and the contain method that is being used during the 
+adding and delition proccess took alot of time to go through each relavant list for that reason.
+
+ClosedHashSet-Once again,unnatural mixture caused bad distrubution.Since alot of words had the same value,
+the class took alot of time to find a proper index for each new element that was added.Also,the contain method
+which is being used as frequently as in the OpenHashSet class,takes alot more time to iterate since it can't
+find all of the items with identical hash value right away.
+
+Strenghs and weaknesses:
+First of all,it is easy to see the LinkedList is really the weak link in every parameter.It would
+be on the bottom of my priorities.HashSet is by far the most effactive data structure,for both add
+and contain,so I would choose it first.TreeSet was more effactive than OpenHashSet in almost all the tests
+excpet for the conatin "hi" tests.My assumption is the it varies based on how many values are there in the 
+LinkedList that contains the words with the search word hash code.Based on that idea,I would rather use Treeset
+because the differance in performence in favor of OpenHashList,when exist,is not substantial,and Treeset looks more 
+effactive in that regard.OpenHashSet was supirior to ClosedHashSet in almost every regard.Only test where the case
+was diffrent,is the contain -13170890158 test.Once again I assume that in this case,the linkedlist for this value
+was pretty stacked and my prefrance will remain OpenHashSet over the ClosedHashSet data structure.
+
+My implementations up againts HashSet:
+Both of the implementation were no contest to the java built in hashset.I think it is because
+the built in hashset uses a hashmap variable which is very effactive,espicialy up againts the LinkedList
+and fixed size array.
+
+
+
+
+
+

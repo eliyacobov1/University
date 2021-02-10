@@ -1,0 +1,61 @@
+eli.yacobov1, amir1011
+Eli Yacobov (315511816), Amir Amirgamzaev (332494103)
+EX: 1
+
+FILES:
+osm.cpp -- a file with some code
+Makefile -- Makefile
+README -- this file
+graphOS.png -- a graph with the time measurements
+for this exercise
+
+REMARKS:
+These are some remarks that
+I want the graders to know
+about this submission.
+
+ANSWERS:
+
+Assignment 1:
+
+The given output for the "strace" command that as excuted on the
+given "WhatIDo" file (only the relevent lines):
+
+dup(2)                                  = 3
+fcntl(3, F_GETFL)                       = 0x2 (flags O_RDWR)
+fstat(3, {st_mode=S_IFCHR|0660, st_rdev=makedev(4, 1), ...}) = 0
+ioctl(3, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+write(3, "Error. The program should receiv"..., 62Error. The program should receive a single argument. Exiting.
+) = 62
+write(3, ": Success\n", 10: Success
+)             = 10
+close(3)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+
+And when excuting the file with 1 argument:
+
+mkdir("Welcome", 0775)                  = 0
+mkdir("Welcome/To", 0775)               = 0
+openat(AT_FDCWD, "Welcome/To/OS2020", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3
+fstat(3, {st_mode=S_IFREG|0777, st_size=0, ...}) = 0
+write(3, "eliyacobov1\nIf you haven't read the course guidelines yet --- do it right now!\n1", 80) = 80
+close(3)                                = 0
+unlink("Welcome/To/OS2020")             = 0
+rmdir("Welcome/To/")                    = 0
+rmdir("Welcome/")                       = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+
+    The program is executed successfully only when a single argument is passed on to it upon an execution attempt
+(otherwise, the message "The program should receive a single argument. Exiting. Success" is written to the current
+file descriptor). On a successful run, the program will first create two folders - "Welcome", "To". Note that the
+program creates the directories or file only if an identical path doesn't exist already. This is done using the mkdir
+system call. Afterward, the progran opens a new file called "OS2020" (using openat). The fstat system call will yield
+different details regarding this file (owner ID, time of last access, etc).
+    Using the write system call, a message is written onto the file (the functionality of write is to perform write
+operation onto a given file descriptor). The message is: "eliyacobov1 (<- Linux user name) If you haven't read the
+course guidelines yet --- do it right now!".
+    The close and unlink commands will close the file descriptor associated with the "OS2020" file and delete it. Then,
+the rmdir calls will delete the 2 folders that were mentioned above. Finally, the exit_group system call will
+terminate all of the processes related to the current process thread group.

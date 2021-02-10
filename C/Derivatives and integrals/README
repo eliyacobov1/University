@@ -1,0 +1,32 @@
+c_ex3
+eli.yacobov1
+315511816
+######
+Explanation:
+
+constants and macro definitions:
+*invalid_msg, *args_msg - string constants that represent the errors
+that are handed out in case the program dosen't run as expected (should cover all cases)
+
+Principles:
+
+There is an emphesise on modularity. The code is divided to many diffrent
+functions.
+
+*isRational - checks if a given number is legal. If so, checks if its also natural.
+
+*chooseFunc- Iv'e implemented the 6 legal functions seperatly and this function returns
+the appropriate function to the input number. Single choise principle plays a part here.
+
+*checkInput - function that asserts that the given input is valid (so tht we know
+if there is a need for the program to continue running)
+
+*The integration and derivative function are will consider the return value from a function
+NAN to mean that the user input is not part of the function domain, and therefore an invalid
+error msg and failure code will be returned is such a case.
+
+*Integration uses a dynimically allocated int array in order to calculate the riemann integral 
+in the given range of values. The array memory is freed at the end of this function.
+
+
+

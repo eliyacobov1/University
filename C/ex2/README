@@ -1,0 +1,79 @@
+c_ex2
+eli.yacobov1
+315511816
+######
+Explanation:
+
+constants and macro definitions:
+*MAXINPUT represents the max char capacity in user input line
+
+*DELIMITERS represnt space delimiters, used to seperate user input values
+in the function "FileToGraph"
+
+*HYPHEN "-" - vrepresents line of leaf vertex
+
+*MEMORY_ERROR -1 - Return code in case of memory error
+
+*tree_msg , *invalid_msg, *args_msg, *mem_msg - string constants that represent the errors
+that are handed out in case the program dosen't run as expected (should cover all cases)
+
+
+*CHECK_DIGIT macro function that checks if a given char represents a digit
+
+Principles:
+
+There is a big emphesise on modularity. The code is divided to many diffrent
+functions:
+
+*pareValue- converts number from string fromat to int (if legal)
+
+*isNatural- asserts that a number in string form is rational
+
+*isTree - gets the root of a graph and checks if it is a tree using the
+DFS algorithm
+
+*Min/Max Height- returns minimum or maximum height of a tree with the given root
+
+*freeGraph - Function that frees all the memory allocated for the graph and it's nodes
+
+etc. (all the functions are well documented in the code)
+
+*I chose to build two structs. First one is Graph, which contains the following attributes:
+
+V- number of vertices in the graph
+
+vertex_list- list of vertices in the graph
+
+Min- represents min depth of graph
+
+Max- ""         max   ""   "   ""
+
+*Second one is Node which represents a vertex in the graph. attr.:
+
+degree - amount of vertices connected to this vertex
+
+key - numeric represntation for the vertex
+
+adj - array of pointers to the adjcent vertices to this vertex
+
+is_root - 1 if this vertex is the root of a graph, 0 otherwise
+
+int visited - indicates visits during DFS run
+
+int pre- indicated pre entry time to vertex during DFS
+
+int post- indicated post exit time to vertex during DFS
+
+int distance -indacates distance during BFS run
+
+*dynamic memory allocation is implemented throughout the code, with an emphasize on
+assertion of successful allocation and the use of the free method when done dealing with
+the given chunk of memory. Every time I free a pointer I do it with a double pointer
+and then set the original pointer to null. Also, I freed the memory in the various cases of
+exit failure return code
+
+*two default constructors for the Node and Graph structs were defined.
+
+*notice that I chose to use the DFS and BFS algorithms as they were described
+in the instructions file
+

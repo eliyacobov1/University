@@ -1,0 +1,22 @@
+eli.yacobov1
+315511816
+Eli Yacobov
+
+
+
+I discussed the exercise with:
+
+README for ex9
+includes files for all functions that were mentioned in the instructions
+
+comments:
+I added few functions to the existing API:
+end_game-checks if there is a car in the exit cell,which means the car should come to an end
+
+In the car calss there are a few functions that return the values of car attribiutes(just like get_name)
+
+The possible moves def in the board calss palys a major role since every movement of the car during in the 
+game requires the program to go through all the possible moves and check if the users input is one of these moves.
+
+in the play def,the game checks if the move is possible using the possible moves def.If so,the car will move,otherwise
+it will check for different input from the user.The game will end when the end_game function will return true.

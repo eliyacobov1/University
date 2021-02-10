@@ -1,0 +1,116 @@
+eli.yacobov1
+
+README for ex5
+
+=============================
+=      File description     =
+=============================
+
+
+fileprocessing package:
+
+DirectoryProcessor.java-main file,manager of all other moudels that run the whole operation.
+
+File_Parsing-class that is responsible for recieving a a commands file and parse it.
+
+NotValidNameException.java-Extends Type ! Exception.Exception that is returned when
+there is a bad filter or order name
+
+Section-implements the section class.A section object has a filter,order and error list
+which consists of errors that are related to this section's lines
+
+ToolBox-includes a few method that are used throughout the project:
+QuickSort- which is the custom sorting method which is used for sorting file arrays
+toStringArray-recivies a line from commands file and divides the elements to an array
+get_extension-returns the extension of a file,is used in the type Order object
+line_validity-asserts the validity of a line in commands file according to the specific
+ORDER or FILTER object
+
+TypeIException.java-an exception which is returned when certain restritions are violated
+(as described in the exrecise instructions).Whenever it is returned,a "warning in line X"
+message in printed
+
+TypeIIException.java-an exception which is returned when certain restritions are violated.
+(as described in the exrecise instructions).Whenever it is returned,the program will retun
+the appropriate error and will exit
+
+ORDER package:
+ORDER.java-the interface for ORDER type objects.Extends Comparator<File>
+abs.java-implements the abs ORDER type
+size.java-implements the size order type
+type.java-implements the type order 
+ORDER_Factory.java-serves as a factory of order objects.Gets a line from commands 
+File and converts it into an ORDER.
+
+FILTER package:
+FILTER.java-the interface for FILTER type objects.has an ispass method and is designed like
+a Predicate
+all.java-implements the all FILTER type
+between.java-implements the between FILTER type
+contains.java-implements the contains FILTER type
+executable.java-implements the executable FILTER type
+file.java-implements the file FILTER type
+greater_than.java-implements the greater_than FILTER type
+smaller_than.java-implements the smaller_than FILTER type
+hidden.java-implements the hidden FILTER type
+Not.java-implements the NOT FILTER type decotractor
+prefix.java-implements the prefix FILTER type
+suffix.java-implements the suffix FILTER type
+writable.java-implements the writable FILTER type
+BadValuesException.java-A TypeI Exception that is thrown when bad double values
+(negative or illegal between values) are entered
+BadParameterException.java-A TypeI Exception that is thrown when bad parameter
+(not YES or NO)is entred as input on the suitble Filters
+Filter_Factory.java-serves as a factory of filters.Gets a line from commands 
+File and converts it into a Filter.
+
+=============================
+=          Design           =
+=============================
+
+-I chose to divide the code into different moudles that handle different tasks.
+
+-The Order moudle that is programed as a comparator.There is a package 
+that includes an ORDER implemented object for each of the given orders
+
+-The FILTER moudle that is programed like a Predicate.There is a package 
+that includes an ORDER implemented object for each of the given orders
+
+These moudles are divided into packges.Each of them includes a Factory class and method
+that revieve a line from the commands file and convert it into the appropriate ORDER/FILTER
+object.This way,the single choice and modularity principles are maintained in an orginized fashion.
+
+Also,I built a ToolBox class which implements static methods that are used in manhy other
+classes and methods.(description above)
+
+-A few of the Filter classes are implemented using the singelton design pattern (where I found
+it useful and convinient to use).
+
+-Type I Exceptions is being inherted by various classes in order to make the reason of the excption
+throw more clear for the code reader and user.
+
+=============================
+=  Implementation details   =
+=============================
+
+-As mentioned before,NOT is a filter type decorator that is used in case the #NOT suffix is found.
+It recivies an existing filter and simply negates it's effect.
+
+-Each order instance includes a boolean variable that indicates the neccesity of reversing an
+array that is sorted using this order.(If #REVERSE suffix is found)
+
+-quicksort is the method that I implemented in order to sort FIle arrays.It recivies a comparator
+(of order type) and an array and orts the array by choosing a pivot cell,moving the values bigger 
+and smaller of the pivot cell to the right and left of the pivot,and repeating the proccess in a recursive
+manner.Specifcly an array is chosen because choosing a pivot cell is more convinient and efficient in this
+data structure.
+
+-Thefile parsing method reads the file line by line,making sure that it follows the proper structure
+of a commands file.If a violation is found,the proper error and excpetion will be returned 
+
+-Each Section object contains an error_list,that is in order to properly print the errors and filtered files
+in the correct order (the errors and results of each section seperatly)
+
+  
+
+

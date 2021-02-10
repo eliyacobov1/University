@@ -1,0 +1,35 @@
+c++_ex1
+eli.yacobov1
+315511816
+######
+Explanation:
+
+-The purpose of this excrise is to create two object classes which represent a Numbers
+arithmetic field (GField) and a number which resides in on eof those specific fields (GFNumber).
+Using these classes, we build different methods and our main goal is to be able to find a given number's
+set of prime factors (using the getPrimeFactors function). These functionalities can be later used 
+to help decipher the famous RSA encryption.
+
+
+Principles:
+
+There is an emphesise on modularity. The code is divided to many diffrent
+functions. I created a number of private functions which are responsible
+to preform various tasks throughout the program code:
+
+adjustNumber-recives a number and a field and adjusts the value to the field's boundries
+(using modulo)
+
+directSearchFactorization - gets a number (n) and returns it's prime factors (in the form
+of a dinamiclly allocated pointer to array) using the trail division algorithm. Also, sets
+ the value of n to the final size of the array.
+
+rhoAlgorithm -  gets a number (n) and returns it's prime factors (in the form
+of a dinamiclly allocated pointer to array) using the rho Pollard algorithm. Also,
+ sets the value of n to the final size of the array.
+
+*GFNumber has a field of type GField.
+
+*In cases of invalid input, the program will exit via an assertion failure. Such cases
+are for instance: P (GField character) which is not prime, N (GFNumber number) which is negative
+or not whole, if any of the 6 arguments is not a long type number etc.

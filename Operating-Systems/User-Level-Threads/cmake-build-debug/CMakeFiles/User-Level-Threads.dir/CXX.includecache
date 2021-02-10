@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Eli/Desktop/university/OS/User-Level-Threads/Thread.cpp
+Thread.h
+/cygdrive/c/Users/Eli/Desktop/university/OS/User-Level-Threads/Thread.h
+
+/cygdrive/c/Users/Eli/Desktop/university/OS/User-Level-Threads/Thread.h
+
+/cygdrive/c/Users/Eli/Desktop/university/OS/User-Level-Threads/uthreads.cpp
+stdio.h
+-
+setjmp.h
+-
+signal.h
+-
+unistd.h
+-
+sys/time.h
+-
+iostream
+-
+uthreads.h
+/cygdrive/c/Users/Eli/Desktop/university/OS/User-Level-Threads/uthreads.h
+Thread.h
+/cygdrive/c/Users/Eli/Desktop/university/OS/User-Level-Threads/Thread.h
+queue
+-
+
+/cygdrive/c/Users/Eli/Desktop/university/OS/User-Level-Threads/uthreads.h
+

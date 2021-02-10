@@ -1,0 +1,51 @@
+cpp_ex3
+eli.yacobov1
+315511816
+######
+Explanation:
+
+-The purpose of this excrise is to receive the paths of a Database file
+ * , a text file and also a threshold that is represented by
+ * an integer. The program will calculate the spam score for
+ * the text according to the values given in the database and
+ * their individual scores. The program will then output an informative
+ * message indicating whether the  text file is considered as spam or not.
+ * Also, we create implement a custom HashMap dataset that is being used in
+ * order to store the values of the database file.
+
+
+Principles:
+
+*There is an emphesise on modularity. The code is divided to many diffrent
+functions. I created a number of private functions which are responsible
+to preform various tasks throughout the program code:
+
+_hashCode- returns the Hash code of a given KeyT object. 
+
+_hashFunc- Method that returns the appropriate index of the HashMap
+according to a given HashCode.
+
+_resize- Checks if  there's a deviation from the upper or lower load factors.
+If there is, will resize and double the array's capacity
+
+readDatabase- Function that reads the database of a SpamDetector
+and writes the data into the given HashMap.
+
+fileToString- Function to convert file's contents to a string variable.
+
+*Rule of five is implemented in the HashMap class.
+
+*The HashMap class contains two inner classes:
+
+-class BadInputException - Custom nested exception class for input that
+ violates one of the exercise's restrictions
+ 
+ -iterator - an implementation of a forward iterator that is used during the 
+to iterate over the map's values during the various methods of the class and in
+the SpamDetector main method.
+
+*on a side note- my original plan was to set the _bucketArray member field of the
+HashMap as a uniqe_ptr that contains an array of buckets. This was in order to add
+a level of sophistication to the code and avoid the need to manually relese the memory
+that is being allocated for this field. However, the presubmit tests only passed when I
+did not use the unique_ptr and that is the reason that I used a regular pointer.

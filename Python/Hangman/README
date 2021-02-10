@@ -1,0 +1,45 @@
+eli.yacobov1
+315511816
+Eli Yacobov
+
+
+
+I discussed the exercise with:
+
+README for ex4
+includes files for all functions that were mentioned in the instructions
+
+comments:
+def run_single_game:# program starts a new,until the point when user reaches max errors or when he figures out the word
+        # checking if the letter was already chosen
+	#if it is in the wrong list or was already reveald in the word itself
+	##check if letter is in the word and if so,use update word function on the letter
+	##else add word to wrong list and start again
+        ##end of game,user gets massge with win or loss depends on how he fared
+
+def filter_words_list:##starts a concactanated loop,for each word in list it check the letters in the pattern
+    ## and if a letter in in the wrong list
+    ##create a variable that will turn false if there is a mismatch with a certain letter
+    ##between the word and the pattern
+    ##if variable is true than we go on to next check to see if word is in wrong list
+    ##like before,we create a variable that will change to false if the word is in the list
+    #if the word got this far and passed all tests,it is eligible to enter the final list
+
+def choose_letter:##create abc list,the index number will represent each letter in the abc
+    ##create a concactanated loop to go count each letter in each word in the list
+    ##i didnt manage to define letter to index function,so instead,ord-97 dives the same result
+    ##a variable to check which letter was most frequent,and another to set the letter that will be returnd
+    ##create new variable to check if letter is in pattern
+    ##if letter is not in pattern,sets its number of times as max letter and sets it as the letter that
+    ##we return to the user
+
+section C-q1:
+-word with all letters identical
+-word with one letter
+-all letters but one are identical
+-very long word
+
+section C-q2:
+-I would define a list with all hebrew letters and in run_single_game i would check if the letter that we recive is in that list
+-in the choose_letter i would create a 22 sized list and would find the index for each hebrew letter to compare the values
+like i did with the abc letters

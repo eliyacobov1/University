@@ -1,0 +1,48 @@
+cpp_ex2
+eli.yacobov1
+315511816
+######
+Explanation:
+
+-The purpose of this excrise is to print three types of Fractal shapes:
+*Seiepinski Carpet, Sierpinski Sieve and Cantor Dust. I created an abstract
+Fractal function which receivs the dimension of the fractal and sets it as
+a data member. After the initialization, each fractal type has it's own 
+implemetation of a "draw" function which prints the fractal in accordence 
+to it's structual specifications. The program receives a single argument
+from the command line which should represent the path to a csv format file.
+The program than reads the contents of the file one by one and prints the fractals
+that are represented by these values in a reverse order.   
+
+
+Principles:
+
+*There is an emphesise on modularity. The code is divided to many diffrent
+functions. I created a number of private functions which are responsible
+to preform various tasks throughout the program code:
+
+isHash-recieves a pair of indexes and returns true if the specific fractal should
+print a hashtag in grid location that is represented by these indexes. Notice that 
+Fractal object has it's own implementation of the isHash function. 
+
+draw- firstly, this function is implemented as an abstract one in the abstract class
+Fractal. It is then overrided by each of the fractal types using the unique function isHash
+to print the different grid contents in each call of the method.
+
+*Inheretance plays a major part since all of the class which we are using are derived
+from the abstract class Fractal. The base class is abstract since there is no sense 
+in intializing an instance of this class.
+
+*Rule of five is implemented in each of the derived classes. Since there are no use of
+dynamic allocation for any of the data members, the constructors and assigment operators
+are defined using the default keyword.
+
+*I created a factory class which has a single factory static method in it. It's purpose is
+to recieve a numeric representation of a fractal and a dimension, check that these are indeed
+valid parameters, and return a pointer to an object which corresponds to these arguments after
+dynimaclly allocating space for it. Notice that the return type of the factory method is a pointer
+to Fractal (the base class) since it can point to objects of the derived classes with no limitations.
+
+*The previously mentioned Fractal pointers are stored in a vector, and then are poped out and deleted
+one at a time in order to print the fractals in a reverse order and free all dynimically allocated 
+memory in the proccess.

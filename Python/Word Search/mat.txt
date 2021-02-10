@@ -1,0 +1,4 @@
+s,E,l,s
+l,i,i,i
+z,x,x,x
+a,p,p,l

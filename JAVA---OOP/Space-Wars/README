@@ -1,0 +1,59 @@
+eli.yacobov1
+
+README for ex2
+
+=============================
+=      File description     =
+=============================
+
+
+Spaceship.java:The main super class that defines the SpaceShip type object.I chose to define 6 instance
+variables which are-physics,health,energy,max_energy,shot_timer,shield.All of which helped me implement the 
+methods in the API.Each variable is well documented and has a description inside of the java file.Also,I have
+added a few methods of my own that I saw fit for the implentation of this exrecise.
+
+Runner.java-implements the runner class which represents the 'runner' type spaceship
+
+Aggressive.java-implements the aggressive class which represents the 'aggressive' type spaceship
+
+Basher.java-implements the basher class which represents the 'basher' type spaceship
+
+Human.java-implements the human class which represents the 'human' type spaceship
+
+Drunkard.java-implements the drunkard class which represents the 'drunkard' type spaceship
+
+Special-implements the special class which represents the 'special' type spaceship
+
+SpaceShipFactory.java-A class which includes one method that converts an array of string's to an array
+of SpaceShip type object depends on the characters which were input. 
+
+=============================
+=          Design           =
+=============================
+
+In order to implement the types of ships as requested,I used the hierarchy principle and implemented 6 subclasses
+to the SpaceShip class.In each file I designed the spaceship's attribiutes and methods according to the description 
+of it.Almost in every file I implemented a seperate DoAction method alongside other methods like movement,shoot and ctivate shield.
+All are meant to dictate the ship behaviour according to its designated characteristics (part of the override principle).
+
+Drunkard:I chose to program the drunkard by giving it random commands for movement,shooting and teleportation (using JAVA's Random)
+
+Special:I chose to make the special ship a combination of behaviours of the aggresive,basher and runner ships.Hence making it 
+the "smartest" ship which acts in the most intelegent manner (AI wise).It attacks other ships,while also trying to avoid 
+the incoming projectiles and activate its shields when a hostile ship is closing on it.Also,instead of reganerating 1 energy unit per
+round, like all the other ship (using the increase_energy method which I implemented),it reganerates 5 energy units to make 
+it more effective and distinguishable.
+
+
+=============================
+=  Implementation details   =
+=============================
+
+As far as extensiblity goes,the code is up to par.I added a bunch of new methods like I mentioned before.
+list of these functins:*is_shield_on,*turn_shield_off,*increase_shot_timer,*increase_energy,*movement (**different on each ship type)
+,*activate_shields(**),teleport_decider (special_ship method).
+
+Understandibility-The code is devided into files,which in my opinion,makes things more orginized and clear for the user.There
+is a detailed explenation almost after every step in the more intricate methods.
+
+

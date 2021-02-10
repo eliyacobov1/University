@@ -1,0 +1,35 @@
+Eli Yakobov eli.yacobov1 
+
+README for ex6
+includes files for all functions that were mentioned in the instructions
+
+comments:
+class_wav_file-We created a class in order to assign atributes to the each variable of this type and class 
+(for each frame ratein audio data list that we got from an external wav file we created a variable that belong to this class)
+
+def start_menu- The first function which the user interacts with fron this menu,
+ depending on the users input the function will activate the next function which
+ will allow the user to modify wav files according to his choises.
+
+def get_file- The function gets the wav file directory from  the user as an input
+ and if the input has no falts it assigns the files frame rate and audio data list
+ into a wav_file type object from the class that we created.
+
+def change file - Allows the user to execute one of six possible predetermand
+ actions in order to modify the wav file.
+
+def transition menu - After each action that the user choses to do he will reach
+ the transition menu which will allow him to save the data into a wav file or
+ continue modifying the wav file.
+
+def combinefiles - combines two wav files first the function gets the files names
+ from the user as an input it seperates and assigns the files atributes into two
+ differnts wav_file type object. Afterwards the function will creat a new audio data
+ into which it will assign values depending on the two audio data lists it gets
+ (their length), the frame rates and the GCD of the frame rates.
+
+def compose melody- The functuon reads the instuctions file and creates a new list into
+ which it assigns values dependeingon the vocal frequency which we manualy assigned at
+ the begining of the file depending on the musical note and also the given period of time
+ that each musical note has.  
+

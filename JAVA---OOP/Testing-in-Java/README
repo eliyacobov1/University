@@ -1,0 +1,82 @@
+eli.yacobov1
+
+README for ex3
+
+=============================
+=      File description     =
+=============================
+
+
+StorageUnit.java-main abstract class the is used as a super class for both the locker class
+and the long term storage.The methods in this class are the one's that are common between
+the classes mentioned above.
+
+Locker.java-implements the locker class which represents the 'locker' type object
+
+LongTermStorage.java-implements the long term storage class which represents the 'longTermStorage' type object
+
+StorageUnitTestInterface.java-an interface class for both the lockertest and longtermtest classes
+
+LockerTest.java-class that test the methods  functionalities of the Locker class
+
+LongTermTest.java-class that test the methods  functionalities of the LongTermStorage class
+
+SpaceshipDepositoryTest.java-test suite that runs both test classes that were mentioned above
+
+Boopingsite.java-implements the locker class which represents the 'BoopingSite' type object
+
+ByStarRating.java-A comparator class that compars hotels by star rating and alphabetical order
+
+By_prox.java-A comparator class that compars hotels by proximity to a certain geographic location and
+by number of Points of interest.
+
+BoopingSiteTest- class that test the methods  functionalities of the BoopingSite class
+
+=============================
+=          Design           =
+=============================
+
+-In order to maintain a clean and orginized coding style,I implemnted part of the methods
+by dividing them into smaller private sub-methods:
+
+*is_legal_type-method that checks if item type is legal before adding it
+
+*attempt_to_add-method that checks that all conditions are met in order to fulfuil a request
+to add items to the locker using the main add_item method (available locker storage,available 
+long term storage etc)
+
+*football_and_bat-method that checks that there is no vilation of this condition that was defined
+(i.e- a locker can't contain items of types football and baseball bat at the same time)
+
+*sort_hotels-method that receives a comparator and a city and returns a sorted
+ array of hotels according to the requirements
+
+-The purpose of the abstract class StorageUnit is to indicate that both locker and long term storage
+have a lot of methods in common and that they are in a way derived from a simillar type of object.Reason
+for it being an abstract class and not an interface class is to emphasize that there exists a relationship
+of "is a" between the superclass and the subclasses.
+
+-Purpose of implementing the StorageUnitTestInterface class is because of simillar reasons.Main differance 
+being that here the class is an interface and is used as a template for the other test classes which implement it.
+
+
+
+=============================
+=  Implementation details   =
+=============================
+
+-First condition that is checked when using add_item is the football and bat condition
+(as we were asked)
+
+-LongTermStorage instances are only used to access the static data membes of this class,and that is
+to perserve a single manageable long term storage that is used by all of the locker instances.
+It is for that reason that the locker class has a static long term storage instance that is used
+whenever needed.(when adding an item in an amount that requires moving part of the items to the long
+term storage)
+
+-when trying to add or remove an item with a negative amount set,-1 error code will be returned to the user,
+and the system will print the error message that was set as default for cases that the exrecise does not cover("Error: Your request cannot be completed at this time")
+
+-Created two seperate comparators in order to implement the sorting methods in BoopingSite.
+
+

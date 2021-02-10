@@ -1,0 +1,26 @@
+eli.yacobov1
+
+
+
+
+I discussed the exercise with:
+README for ex1
+
+Book.java:Includes all methods that were described in the API.In addition,I added 2 instance variables-
+-ID and partonId in order to keep track of the book's id after adding it to a library and of it's owners 
+id when a patron is borrowing it.
+
+Patron.java:Includes all methods that were described in the API.I have added 2 instance variables to this class-
+-id to keep track of the patron's id when he is registered to a certain library,and NumBooksBorrowed in order to check
+if a patron is not exceeding the limit of the maximum books that he can borrow (depending on the value which is defined to that specific library)
+
+Library.java: Includes all methods that were described in the API.Design choices are described in the last part
+of this file.
+
+Design:In addition to the variables which I chose to add (the one's that were mentioned above),I added getters and setters
+for the book and patron classes,so that I can manage the methods in the library class in a more convinient manner.Also,for the
+library class,I have added a patron list,a book list, and two additional variables-book count and patron count.The ID that is 
+being set and determined for each  book and patron upon adding a book to the library or registering a patron to the library,is
+being orginized i n a subsequent manner and it is done so with the of these variables that i have just mentioned.Each book and patron
+will recieve an id number (if eligible to join the library according to the critiria that is further described in the java file itself)
+and will be placed in the (id-1) place in the suitible array.That way,it is easy to access each object given the object's ID.

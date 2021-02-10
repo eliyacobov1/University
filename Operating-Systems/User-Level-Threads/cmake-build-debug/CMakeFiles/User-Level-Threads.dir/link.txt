@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/User-Level-Threads.dir/uthreads.cpp.o CMakeFiles/User-Level-Threads.dir/Thread.cpp.o  -o User-Level-Threads.exe -Wl,--out-implib,libUser-Level-Threads.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

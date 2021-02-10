@@ -1,0 +1,51 @@
+c_ex1
+eli.yacobov1
+315511816
+######
+Explanation:
+
+constants and macro definitions:
+*MAXINPUT represents the max char capacity in user input line
+
+*ARRAYSIZE, N, M represent the max capacities for the number series g, h
+
+*INPUT_DELIM represnt space delimiters, used to seperate user input values
+in the function "seriesinput"
+
+*DOT represnts a dot char. we use it to check if dots are present in a given number
+
+*UNDERFLOW_BOUNDARY used to avoid devision by 0 in certain cases
+
+*MULTIPLY macro function that multiplies two numbers
+
+*CHECK_DIGIT macro function that checks if a given char represents a digit
+
+Principles:
+
+There is a big emphesise on modularity. The code is divided to many diffrent
+function:
+
+*strnum- converts number from string fromat to double
+
+*isrational-asserts that a number is rational
+
+*isnatural-asserts that a number is natural (or 0)
+
+*seriesinput- inserts user input to double array (iff input consists of rational nums)
+
+*numinput -returns the number which the user entered (iff it is a natural num or 0)
+
+*center- gets an array of double values relocates the values which were entred by a user
+to the center of the array
+
+*norm-normilizes the values of a double array using L1 norm
+
+*convolution- gets two arrays of double volues, and a number (n), and returns an array
+of values represnting the convolution result for the 2 arrays after n times.
+
+*histogram-prints histogram of the given array values
+
+Remarks:
+*notice that upon an initialization of a double array, I put zeroes as the array
+values to avoid potential errors further down the road
+

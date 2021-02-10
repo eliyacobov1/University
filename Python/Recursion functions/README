@@ -1,0 +1,47 @@
+eli.yacobov1
+315511816
+Eli Yacobov
+
+
+
+I discussed the exercise with:
+
+README for ex7
+includes files for all functions that were mentioned in the instructions
+
+comments:
+The exrcise was about recursive functions.In most of the functions,I created an addtional
+helper function in order to add more variebles that were not mentioned in the string.(for example,an empty string or list)
+
+is_prime-returns true or flase depends if a number is prime or not
+
+has_devisor_smaller_than-recieves two number and checks if the first number has a lower devisor
+than the second number
+
+factorial-returns factorial value of a number
+
+pow-retruns first number in the power of the second number
+
+helper_print_sequences-helper function for print sequences.adds an empty string into which
+the function adds letters whenever needed.
+
+helper_no_repetition_sequences-same principle as in helper of print_sequences
+
+parentheses_helper-adds three variables.A counter for open brackets,closed brackets and an empty
+list into which each combination of parentheses is appended to.(also an empty string called sub into which the program adds the parentheses)
+
+up_and_right_helper-adds empty string called "sub" into which 'u' and 'l' are written.Also adds counters
+for both directions.
+
+runtime analysis:
+is_prime-the program uses the has_devisor_smaller_than funtion which checks the condition
+for all the numbers from i to 1 the function runs (I) steps each times (n steps).
+
+no_repetition_sequences-the program uses the helper funtion which checks the condition
+in a for loop for the length of the check list,it does it again and again n(the variable) times.So the runtime is:
+n(length of check_list)*n(variable the represents the number of characters in a string)
+
+flood_fill-the runtime for this function is not constant as it depends on the time when
+the function is sorounded by '*'.At max,the time will be the size of the matrix minus one (because the frame) which is (m*n). 
+
+ 
